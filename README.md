@@ -1,14 +1,14 @@
-# 🚀 Kanban Task Management Application
+# Kanban Task Management Application
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-### 🔴 **[Click Here to See the Live Production Deployment!](https://kanban-board-five-eosin.vercel.app)** 🔴
+**[View Live Deployment](https://kanban-board-five-eosin.vercel.app)**
 
-A premium, highly-responsive single-page Kanban board designed for maximum productivity and aesthetic appeal. Built from the ground up to demonstrate deep technical proficiency with modern web APIs, zero-dependency engineering, and pixel-perfect design.
+A responsive, single-page Kanban board application designed for task management. This project was built to demonstrate proficiency in modern web development, emphasizing clean architecture, native browser APIs, and zero-dependency implementation where possible.
 
 ---
 
-## 📸 Project Presentation
+## Application Interface
 
 <p align="center">
   <img src="docs/hero-dark.png" alt="Kanban Board Dark Mode" width="100%" />
@@ -20,98 +20,74 @@ A premium, highly-responsive single-page Kanban board designed for maximum produ
 
 ---
 
-## ✨ Standout Features
+## Features
 
-### 🛠 Technical Excellence (Zero Dependencies)
-Unlike typical React applications heavily reliant on external libraries, this project prioritizes **native browser APIs** and raw engineering capability:
-- **Native HTML5 Drag & Drop:** Custom-built drag-and-drop orchestration. No heavy libraries like `react-beautiful-dnd` or `dnd-kit`.
-- **Vanilla CSS Architecture:** A complete, custom design system utilizing CSS Custom Properties (variables), avoiding utility frameworks like Tailwind for complete stylistic control.
-- **Client-Side Persistence:** Seamless state management using `localStorage` to ensure task data and user preferences survive page reloads.
-
-### 🎨 Premium UI/UX Design
-Evaluators look for polish. This application delivers a stunning user interface:
-- **Glassmorphism Aesthetic:** Sophisticated semi-transparent backgrounds with backdrop filters for a modern, sleek appearance.
-- **Micro-interactions:** Smooth keyframe animations, hover states, and spring-like transitions for every user action.
-- **Persisted Theme Toggling:** A flawless dark/light mode toggle that remembers user preference.
-- **Fluid Responsiveness:** A layout that gracefully transitions from a sprawling horizontal desktop board to a tightly packed vertical mobile stack.
-
-### ⚙️ Core Functionality
-- **Dynamic Columns:** Ship with default columns (Todo, In Progress, Done) but freely create, rename, and delete custom workflow stages.
-- **Comprehensive Task Management:** Create, edit, and delete tasks with titles, detailed descriptions, and multi-colored priority badges (Low, Medium, High, Urgent).
-- **Intelligent Search:** Real-time search/filtering across all columns to instantly find tasks by title, description, or priority.
+- **Dynamic Workflows:** Includes default columns (Todo, In Progress, Done) with the ability to freely create, rename, and delete custom workflow stages.
+- **Task Management:** Create, edit, and delete tasks. Support for detailed descriptions and color-coded priority levels (Low, Medium, High, Urgent).
+- **Search & Filtering:** Real-time search processing across all columns by task title, description, or priority.
+- **Theme Support:** User-persisted dark and light mode toggling.
+- **Responsive Layout:** Layout adapts seamlessly from horizontal desktop views to vertical mobile stacks.
 
 ---
 
-## 🏗 System Architecture
+## Technical Details
 
-The project is structured for scalability, readability, and performance.
+### Architecture & Implementation
+This application minimizes external dependencies to showcase foundational engineering skills:
+
+- **Native HTML5 Drag & Drop:** Orchestrated using the native `dataTransfer` API rather than relying on heavy third-party drag-and-drop libraries. Drop indices are calculated precisely based on cursor position relative to component bounding rectangles during the drag operation.
+- **Vanilla CSS:** The entire design system is built using CSS Custom Properties (variables) and standard CSS modules (Flexbox, media queries), maintaining complete stylistic structure without utility class frameworks.
+- **Client-Side Persistence:** Seamless state management leveraging standard `localStorage` to ensure task data, configurations, and user preferences persist across browser sessions.
+- **Decoupled Logic:** Complex business logic (CRUD operations, state array manipulation, storage synchronization) is strictly separated from the presentation layer via custom React hooks (`useKanban`, `useTheme`).
+
+---
+
+## System Architecture
 
 ```text
 src/
 ├── App.jsx                    # Root component & state provider
-├── main.jsx                   # React 19 entry point
-├── index.css                  # Comprehensive CSS design system
+├── main.jsx                   # React entry point
+├── index.css                  # Global styles and design system
 ├── hooks/
-│   ├── useKanban.js           # Core state logic & localStorage sync
+│   ├── useKanban.js           # Core state logic & storage sync
 │   └── useTheme.js            # Theme toggle management
 └── components/
-    ├── Board.jsx              # Orchestrates columns and modal dialogs
-    ├── Column.jsx             # Manages drop zones and task rendering
+    ├── Board.jsx              # Orchestrates columns and modals
+    ├── Column.jsx             # Manages drop zones and task lists
     ├── TaskCard.jsx           # Draggable task entity
-    ├── TaskModal.jsx          # Accessible create/edit form
+    ├── TaskModal.jsx          # Create/edit form interface
     ├── SearchBar.jsx          # Real-time filtering input
-    └── ThemeToggle.jsx        # Dark/light aesthetic switch
+    └── ThemeToggle.jsx        # Aesthetic switch component
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start
 
 ### Prerequisites
-- Node.js (v18+)
+- Node.js (v18 or higher)
 
-### Installation
+### Local Development
 
-1. **Clone the repository:**
-   *(Extract the ZIP or clone if applicable)*
-
-2. **Navigate to the project directory:**
+1. **Clone the repository and navigate to the project directory:**
    ```bash
    cd projects/gdg
    ```
 
-3. **Install dependencies:**
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-4. **Start the development server:**
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
-   The application will be running instantly at `http://localhost:5173/`.
+   The application will be accessible at `http://localhost:5173/`.
 
 ### Building for Production
 ```bash
 npm run build
 ```
-Generates an ultra-lightweight, highly optimized bundle in the `dist/` directory. (The entire JS/CSS payload is < 80kb gzipped!)
-
----
-
-## 🎯 Evaluator's Note on Design Decisions
-
-When evaluating this assignment, please note the deliberate architectural choices made to showcase engineering depth:
-
-1. **Why no drag-and-drop library?**
-   Demonstrates mastery over the DOM and the native `dataTransfer` API, correctly calculating drop indices based on mouse positioning relative to component bounding rects.
-   
-2. **Why Vanilla CSS?**
-   Showcases a deep understanding of CSS variables, Flexbox layouts, media queries, and `backdrop-filter` capabilities without relying on abstract utility classes.
-
-3. **Why Custom Hooks?**
-   `useKanban` completely decouples the complex business logic (CRUD operations + column moving + `localStorage` sync) from the presentation layer, adhering to clean architecture principles.
-
----
-
-*Designed and developed as part of a technical demonstration. Thank you for reviewing!*
+This generates an optimized production bundle in the `dist/` directory.
