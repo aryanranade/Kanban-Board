@@ -8,6 +8,18 @@ A premium, highly-responsive single-page Kanban board designed for maximum produ
 
 ---
 
+## 📸 Project Presentation
+
+<p align="center">
+  <img src="docs/hero-dark.png" alt="Kanban Board Dark Mode" width="100%" />
+</p>
+<p align="center">
+  <img src="docs/hero-light.png" alt="Kanban Board Light Mode" width="49%" />&nbsp;
+  <img src="docs/task-modal.png" alt="Task Edit Modal" width="49%" />
+</p>
+
+---
+
 ## ✨ Standout Features
 
 ### 🛠 Technical Excellence (Zero Dependencies)
