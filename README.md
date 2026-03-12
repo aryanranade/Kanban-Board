@@ -14,8 +14,10 @@ A responsive, single-page Kanban board application designed for task management.
   <img src="screenshots/Screenshot 2026-03-12 at 23.50.23.png" alt="Kanban Board Main View" width="100%" />
 </p>
 <p align="center">
-  <img src="screenshots/Screenshot 2026-03-12 at 23.50.49.png" alt="Task Modal View" width="49%" />&nbsp;
-  <img src="screenshots/Screenshot 2026-03-12 at 23.51.18.png" alt="Task Modal View 2" width="49%" />
+  <img src="screenshots/Screenshot 2026-03-12 at 23.50.49.png" alt="Task Modal View" width="100%" />
+</p>
+<p align="center">
+  <img src="screenshots/Screenshot 2026-03-12 at 23.51.18.png" alt="Task Modal View 2" width="100%" />
 </p>
 
 ---
