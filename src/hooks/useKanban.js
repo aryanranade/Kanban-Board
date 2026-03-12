@@ -40,13 +40,22 @@ export function useKanban() {
     saveToStorage(columns, tasks);
   }, [columns, tasks]);
 
-  const addTask = useCallback((columnId, title, description = '', priority = 'medium') => {
+  const addTask = useCallback((columnId, title, description = '', priority = 'medium', dueDate = '', subtasks = [], labels = []) => {
     const id = `task-${generateId()}`;
+    // subtasks may already be objects (from modal) or plain strings
+    const normalizedSubtasks = subtasks.map((st, i) =>
+      typeof st === 'string'
+        ? { id: `st-${generateId()}-${i}`, text: st, done: false }
+        : st
+    );
     const newTask = {
       id,
       title,
       description,
       priority,
+      dueDate,
+      subtasks: normalizedSubtasks,
+      labels,
       createdAt: new Date().toISOString(),
     };
 

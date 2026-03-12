@@ -11,11 +11,11 @@ A responsive, single-page Kanban board application designed for task management.
 ## 📸 Application Interface
 
 <p align="center">
-  <img src="docs/hero-dark.png" alt="Kanban Board Dark Mode" width="100%" />
+  <img src="screenshots/Screenshot 2026-03-12 at 23.50.23.png" alt="Kanban Board Main View" width="100%" />
 </p>
 <p align="center">
-  <img src="docs/hero-light.png" alt="Kanban Board Light Mode" width="49%" />&nbsp;
-  <img src="docs/task-modal.png" alt="Task Edit Modal" width="49%" />
+  <img src="screenshots/Screenshot 2026-03-12 at 23.50.49.png" alt="Task Modal View" width="49%" />&nbsp;
+  <img src="screenshots/Screenshot 2026-03-12 at 23.51.18.png" alt="Task Modal View 2" width="49%" />
 </p>
 
 ---
@@ -71,7 +71,7 @@ src/
 
 1. **Clone the repository and navigate to the project directory:**
    ```bash
-   cd projects/gdg
+   cd projects/kanban
    ```
 
 2. **Install dependencies:**
